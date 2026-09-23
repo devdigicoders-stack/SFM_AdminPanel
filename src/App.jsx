@@ -10,6 +10,7 @@ import AdminLogin from './pages/AdminLogin';
 import AdminDashboard from './pages/AdminDashboard';
 import ManageEnquiry from './pages/ManageEnquiry';
 import ManageBlog from './pages/ManageBlog';
+import ViewBlog from './pages/ViewBlog';
 import ManageBlogCategory from './pages/ManageBlogCategory';
 import ManageBanner from './pages/ManageBanner';
 import ManageHomepage from './pages/ManageHomepage';
@@ -64,6 +65,14 @@ export default function App() {
               element={
                 <ProtectedAdminRoute>
                   <ManageBlog />
+                </ProtectedAdminRoute>
+              }
+            />
+            <Route
+              path="/blogs/:id"
+              element={
+                <ProtectedAdminRoute>
+                  <ViewBlog />
                 </ProtectedAdminRoute>
               }
             />

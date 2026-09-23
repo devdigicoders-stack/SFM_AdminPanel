@@ -20,11 +20,14 @@ import {
   FiLink
 } from 'react-icons/fi';
 
+import { uploadImageAPI } from '../services/api';
+
 export default function ManageBanner() {
   const { banners, saveBanner, deleteBanner } = useAdminData();
   const [editingBanner, setEditingBanner] = useState(null);
   const [isModalOpen, setIsModalOpen] = useState(false);
   const [isSubmitting, setIsSubmitting] = useState(false);
+  const [isUploadingImage, setIsUploadingImage] = useState(false);
 
   const [formData, setFormData] = useState({
     title: '',
@@ -77,25 +80,41 @@ export default function ManageBanner() {
     setEditingBanner(null);
   };
 
-  const handleFileUpload = (e) => {
+  const handleFileUpload = async (e) => {
     const file = e.target.files?.[0];
     if (!file) return;
 
-    // Check size limit (max 5MB)
-    if (file.size > 5 * 1024 * 1024) {
-      showToast('Image file size must be less than 5MB', 'warning');
+    if (!file.type.startsWith('image/')) {
+      showToast('Please select a valid image file (JPG, PNG, WebP)', 'warning');
       return;
     }
 
-    const reader = new FileReader();
-    reader.onload = (event) => {
-      setFormData(prev => ({ ...prev, image: event.target.result }));
-      showToast('Image loaded successfully!', 'success');
-    };
-    reader.onerror = () => {
-      showToast('Failed to read image file', 'error');
-    };
-    reader.readAsDataURL(file);
+    // Check size limit (max 10MB)
+    if (file.size > 10 * 1024 * 1024) {
+      showToast('Image file size must be less than 10MB', 'warning');
+      return;
+    }
+
+    setIsUploadingImage(true);
+    try {
+      const res = await uploadImageAPI(file);
+      if (res && res.url) {
+        setFormData(prev => ({ ...prev, image: res.url }));
+        showToast('Banner image uploaded to backend server uploads successfully!', 'success');
+      } else {
+        throw new Error('Upload response missing image url');
+      }
+    } catch (err) {
+      console.warn('Backend banner upload failed, using local preview:', err.message);
+      const reader = new FileReader();
+      reader.onload = (event) => {
+        setFormData(prev => ({ ...prev, image: event.target.result }));
+        showToast('Image attached locally', 'info');
+      };
+      reader.readAsDataURL(file);
+    } finally {
+      setIsUploadingImage(false);
+    }
   };
 
   const handleSubmit = async (e) => {
