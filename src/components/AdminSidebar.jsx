@@ -3,17 +3,17 @@ import { NavLink } from 'react-router-dom';
 import SfmLogo from './SfmLogo';
 import { useAdminData } from '../context/AdminDataContext';
 import { useAdminAuth } from '../context/AdminAuthContext';
-import { 
-  FiGrid, 
-  FiInbox, 
-  FiEdit3, 
-  FiFolder, 
-  FiImage, 
-  FiHome, 
-  FiTool, 
-  FiShare2, 
-  FiUser, 
-  FiKey, 
+import {
+  FiGrid,
+  FiInbox,
+  FiEdit3,
+  FiFolder,
+  FiImage,
+  FiHome,
+  FiTool,
+  FiShare2,
+  FiUser,
+  FiKey,
   FiLogOut,
   FiExternalLink,
   FiX
@@ -42,22 +42,21 @@ export default function AdminSidebar({ mobileOpen, onClose }) {
     <>
       {/* Mobile Backdrop */}
       {mobileOpen && (
-        <div 
-          onClick={onClose} 
+        <div
+          onClick={onClose}
           className="fixed inset-0 z-40 bg-slate-900/60 backdrop-blur-sm lg:hidden"
         ></div>
       )}
 
       {/* Sidebar Container */}
-      <aside className={`fixed top-0 left-0 bottom-0 z-50 w-72 bg-white border-r border-slate-200 flex flex-col justify-between transition-transform duration-300 shadow-sm lg:translate-x-0 ${
-        mobileOpen ? 'translate-x-0' : '-translate-x-full'
-      }`}>
-        
+      <aside className={`fixed top-0 left-0 bottom-0 z-50 w-72 bg-white border-r border-slate-200 flex flex-col justify-between transition-transform duration-300 shadow-sm lg:translate-x-0 ${mobileOpen ? 'translate-x-0' : '-translate-x-full'
+        }`}>
+
         {/* Sidebar Header */}
         <div>
           <div className="p-6 border-b border-slate-200 flex items-center justify-between">
             <SfmLogo size="sm" showTagline={false} lightMode={true} />
-            <button 
+            <button
               onClick={onClose}
               className="lg:hidden p-1.5 rounded-lg bg-slate-100 text-slate-600 hover:bg-slate-200"
             >
@@ -76,11 +75,10 @@ export default function AdminSidebar({ mobileOpen, onClose }) {
                 key={item.path}
                 to={item.path}
                 onClick={onClose}
-                className={({ isActive }) => `flex items-center justify-between px-3.5 py-2.5 rounded-xl text-xs font-bold transition-all duration-150 ${
-                  isActive
+                className={({ isActive }) => `flex items-center justify-between px-3.5 py-2.5 rounded-xl text-xs font-bold transition-all duration-150 ${isActive
                     ? 'bg-[#0b1d3a] text-white shadow-sm'
                     : 'text-slate-600 hover:text-[#0b1d3a] hover:bg-slate-100'
-                }`}
+                  }`}
               >
                 <div className="flex items-center gap-3">
                   <span className="text-base">{item.icon}</span>
@@ -104,7 +102,7 @@ export default function AdminSidebar({ mobileOpen, onClose }) {
             rel="noopener noreferrer"
             className="w-full flex items-center justify-center gap-2 px-3 py-2 rounded-xl text-xs font-bold bg-white border border-slate-200 text-slate-700 hover:text-[#c1121f] transition-colors shadow-sm"
           >
-            <span>View Public Website</span>
+            <span></span>
             <FiExternalLink />
           </a>
 
