@@ -103,6 +103,11 @@ export const createCategoryAPI = async (catData) => {
   return res.data;
 };
 
+export const updateCategoryAPI = async (id, catData) => {
+  const res = await api.put(`/categories/${id}`, catData);
+  return res.data;
+};
+
 export const deleteCategoryAPI = async (id) => {
   const res = await api.delete(`/categories/${id}`);
   return res.data;

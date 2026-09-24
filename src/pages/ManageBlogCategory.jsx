@@ -39,14 +39,15 @@ export default function ManageBlogCategory() {
     setEditName(cat.name);
   };
 
-  const handleSaveEdit = async (catId) => {
+  const handleSaveEdit = async (cat) => {
     if (!editName.trim()) {
       showToast('Category name cannot be empty', 'warning');
       return;
     }
     const slug = editName.toLowerCase().replace(/\s+/g, '-').replace(/[^\w-]/g, '');
     await saveCategory({
-      id: catId,
+      id: cat.id,
+      oldName: cat.name,
       name: editName.trim(),
       slug: slug
     });
@@ -133,7 +134,7 @@ export default function ManageBlogCategory() {
                         className="px-3 py-1.5 rounded-lg border border-[#c1121f] text-xs font-bold text-slate-900 focus:outline-none flex-1 max-w-sm"
                       />
                       <button
-                        onClick={() => handleSaveEdit(cat.id)}
+                        onClick={() => handleSaveEdit(cat)}
                         className="p-2 rounded-lg bg-emerald-50 text-emerald-700 hover:bg-emerald-100 transition-colors"
                         title="Save"
                       >

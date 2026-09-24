@@ -9,6 +9,7 @@ import {
   deleteBlogAPI,
   getCategoriesAPI,
   createCategoryAPI,
+  updateCategoryAPI,
   deleteCategoryAPI,
   getBannersAPI,
   createBannerAPI,
@@ -287,6 +288,17 @@ export function AdminDataProvider({ children }) {
   const saveCategory = async (catData) => {
     if (catData.id) {
       setCategories(prev => prev.map(c => c.id === catData.id ? { ...c, ...catData } : c));
+      
+      // Update any blogs in state that used the old category name or id
+      if (catData.name) {
+        setBlogs(prev => prev.map(b => (b.categoryId === catData.id || b.category === catData.oldName) ? { ...b, category: catData.name, categoryId: catData.id } : b));
+      }
+
+      try {
+        await updateCategoryAPI(catData.id, catData);
+      } catch (e) {
+        console.warn('API error updating category:', e.message);
+      }
     } else {
       const newCat = {
         ...catData,
@@ -296,7 +308,10 @@ export function AdminDataProvider({ children }) {
       };
       setCategories(prev => [...prev, newCat]);
       try {
-        await createCategoryAPI(newCat);
+        const res = await createCategoryAPI(newCat);
+        if (res?.data?.id) {
+          setCategories(prev => prev.map(c => c.id === newCat.id ? { ...newCat, id: res.data.id } : c));
+        }
       } catch (e) {
         console.warn('API error creating category:', e.message);
       }
