@@ -55,20 +55,6 @@ export default function ChangePassword() {
           </p>
         </div>
 
-        {error && (
-          <div className="p-4 rounded-xl bg-red-50 border border-red-200 text-red-700 text-xs font-bold flex items-center gap-2">
-            <FiAlertCircle className="text-red-500 text-base flex-shrink-0" />
-            <span>{error}</span>
-          </div>
-        )}
-
-        {success && (
-          <div className="p-4 rounded-xl bg-emerald-50 border border-emerald-200 text-emerald-800 text-xs font-bold flex items-center gap-2">
-            <FiCheckCircle className="text-emerald-600 text-base flex-shrink-0" />
-            <span>{success}</span>
-          </div>
-        )}
-
         <div className="bg-white rounded-2xl border border-slate-200 p-6 shadow-sm">
           <form onSubmit={handleSubmit} className="space-y-4">
             <div>
