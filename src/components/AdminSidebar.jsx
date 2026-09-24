@@ -96,15 +96,7 @@ export default function AdminSidebar({ mobileOpen, onClose }) {
 
         {/* Sidebar Footer */}
         <div className="p-4 border-t border-slate-200 space-y-2 bg-slate-50">
-          <a
-            href="http://localhost:5173"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="w-full flex items-center justify-center gap-2 px-3 py-2 rounded-xl text-xs font-bold bg-white border border-slate-200 text-slate-700 hover:text-[#c1121f] transition-colors shadow-sm"
-          >
-            <span></span>
-            <FiExternalLink />
-          </a>
+          
 
           <button
             onClick={logout}

@@ -183,13 +183,7 @@ export function AdminDataProvider({ children }) {
         ]);
 
         if (enqRes.status === 'fulfilled' && enqRes.value?.data !== undefined) setEnquiries(enqRes.value.data);
-        
-        // Preserve local blogs with uploaded images if they exist in localStorage
-        const localBlogs = localStorage.getItem('sfm_admin_blogs');
-        if (!localBlogs && blogRes.status === 'fulfilled' && blogRes.value?.data !== undefined) {
-          setBlogs(blogRes.value.data);
-        }
-        
+        if (blogRes.status === 'fulfilled' && blogRes.value?.data !== undefined) setBlogs(blogRes.value.data);
         if (catRes.status === 'fulfilled' && catRes.value?.data !== undefined) setCategories(catRes.value.data);
         if (banRes.status === 'fulfilled' && banRes.value?.data !== undefined) setBanners(banRes.value.data);
         if (homeRes.status === 'fulfilled' && homeRes.value?.data) setHomepageContent(homeRes.value.data);
