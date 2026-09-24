@@ -42,13 +42,6 @@ export default function AdminProfile() {
           </p>
         </div>
 
-        {message && (
-          <div className="p-4 rounded-xl bg-emerald-50 border border-emerald-200 text-emerald-800 text-xs font-bold flex items-center gap-2">
-            <FiCheckCircle className="text-emerald-600 text-base" />
-            {message}
-          </div>
-        )}
-
         <div className="bg-white rounded-2xl border border-slate-200 p-6 shadow-sm">
           {/* Avatar & Role Header */}
           <div className="flex items-center gap-4 pb-6 border-b border-slate-100">
