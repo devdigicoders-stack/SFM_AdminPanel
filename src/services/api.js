@@ -156,12 +156,15 @@ export const updateSocialsAPI = async (data) => {
 };
 
 // Upload API for Files & Images
-export const uploadImageAPI = async (file) => {
+export const uploadImageAPI = async (file, folder = 'blogs') => {
   const formData = new FormData();
   formData.append('image', file);
-  const res = await api.post('/upload', formData, {
+  formData.append('folder', folder);
+  const token = localStorage.getItem('sfm_jwt_token');
+  const res = await axios.post(`${API_BASE_URL}/upload?folder=${encodeURIComponent(folder)}`, formData, {
     headers: {
       'Content-Type': 'multipart/form-data',
+      ...(token ? { Authorization: `Bearer ${token}` } : {})
     },
   });
   return res.data;

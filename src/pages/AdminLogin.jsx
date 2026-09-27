@@ -82,14 +82,16 @@ export default function AdminLogin() {
       <div className="w-full max-w-md relative z-10">
         
         {/* Logo Card Header */}
-        <div className="text-center mb-8">
-          <div className="inline-flex p-4 rounded-3xl bg-white shadow-xl shadow-slate-200/60 border border-slate-200/80 mb-4">
-            <SfmLogo size="md" showTagline={false} lightMode={true} />
+        <div className="text-center mb-6">
+          <div className="inline-flex items-center justify-center p-3 sm:p-4 rounded-3xl bg-white shadow-xl shadow-slate-200/60 border border-slate-200/80 mb-3">
+            <SfmLogo size="md" />
           </div>
-          <div className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-[#0b1d3a] text-white text-[11px] font-black tracking-widest uppercase mb-1">
-            <FiShield className="text-[#c1121f]" /> Executive Operations Portal
+          <div className="flex items-center justify-center">
+            <span className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-[#0b1d3a] text-white text-[11px] font-black tracking-widest uppercase shadow-sm">
+              <FiShield className="text-[#c1121f]" /> Executive Operations Portal
+            </span>
           </div>
-          <p className="text-xs text-slate-500 font-medium">
+          <p className="text-xs text-slate-500 font-medium mt-1.5">
             Authorized Personnel & Management Login Only
           </p>
         </div>
@@ -153,17 +155,6 @@ export default function AdminLogin() {
           </form>
 
         </div>
-
-        {/* Back Link */}
-        <div className="text-center mt-6">
-          <a
-            href="http://localhost:5173"
-            className="text-xs font-bold text-slate-500 hover:text-[#c1121f] transition-colors"
-          >
-            ← Back to Public Website
-          </a>
-        </div>
-
       </div>
     </div>
   );
