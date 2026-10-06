@@ -154,7 +154,7 @@ export default function ViewBlog() {
 
             <div className="flex flex-wrap items-center gap-4 text-xs font-semibold text-slate-500 pb-6 border-b border-slate-100">
               <span className="flex items-center gap-1.5 text-slate-900 font-bold">
-                <FiUser className="text-[#c1121f]" /> By {article.author || 'Pranjal Gupta'}
+                <FiUser className="text-[#c1121f]" /> By {article.author && article.author !== 'Pranjal Gupta' ? article.author : 'Spartans Facility Management — Sales Team'}
               </span>
               <span>•</span>
               <span className="flex items-center gap-1.5">

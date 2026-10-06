@@ -38,8 +38,8 @@ export default function ManageBanner() {
     active: true,
     ctaText: 'Request Facility Health Audit',
     ctaLink: '/contact',
-    secondaryCtaText: 'Explore Vigyani.ai Hub',
-    secondaryCtaLink: '/vigyani-ai'
+    secondaryCtaText: 'Explore AI Tracking & Monitoring',
+    secondaryCtaLink: '/ifm-services'
   });
 
   const handleOpenModal = (banner = null) => {
@@ -54,8 +54,8 @@ export default function ManageBanner() {
         active: banner.active !== false,
         ctaText: banner.ctaText || 'Request Facility Health Audit',
         ctaLink: banner.ctaLink || '/contact',
-        secondaryCtaText: banner.secondaryCtaText || 'Explore Vigyani.ai Hub',
-        secondaryCtaLink: banner.secondaryCtaLink || '/vigyani-ai'
+        secondaryCtaText: banner.secondaryCtaText || 'Explore AI Tracking & Monitoring',
+        secondaryCtaLink: banner.secondaryCtaLink || '/ifm-services'
       });
     } else {
       setEditingBanner(null);
@@ -68,8 +68,8 @@ export default function ManageBanner() {
         active: true,
         ctaText: 'Request Facility Health Audit',
         ctaLink: '/contact',
-        secondaryCtaText: 'Explore Vigyani.ai Hub',
-        secondaryCtaLink: '/vigyani-ai'
+        secondaryCtaText: 'Explore AI Tracking & Monitoring',
+        secondaryCtaLink: '/ifm-services'
       });
     }
     setIsModalOpen(true);
@@ -485,7 +485,7 @@ export default function ManageBanner() {
                         value={formData.secondaryCtaText}
                         onChange={(e) => setFormData({ ...formData, secondaryCtaText: e.target.value })}
                         className="w-full px-3 py-2 rounded-lg border border-slate-200 text-xs text-slate-900 font-medium focus:outline-none focus:border-[#c1121f]"
-                        placeholder="Explore Vigyani.ai Hub"
+                        placeholder="Explore AI Tracking & Monitoring"
                       />
                     </div>
                     <div>
@@ -497,7 +497,7 @@ export default function ManageBanner() {
                         value={formData.secondaryCtaLink}
                         onChange={(e) => setFormData({ ...formData, secondaryCtaLink: e.target.value })}
                         className="w-full px-3 py-2 rounded-lg border border-slate-200 text-xs text-slate-900 font-medium focus:outline-none focus:border-[#c1121f]"
-                        placeholder="/vigyani-ai"
+                        placeholder="/ifm-services"
                       />
                     </div>
                   </div>

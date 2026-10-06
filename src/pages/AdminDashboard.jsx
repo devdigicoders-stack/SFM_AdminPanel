@@ -36,7 +36,7 @@ export default function AdminDashboard() {
       value: enquiries.length,
       sub: `${pendingEnquiries.length} pending reviews`,
       icon: <FiInbox />,
-      color: 'bg-blue-50 text-blue-700 border-blue-200',
+      color: 'bg-red-50 text-[#c1121f] border-red-200',
       badge: '+18% this month'
     },
     {
@@ -44,7 +44,7 @@ export default function AdminDashboard() {
       value: scheduledAudits.length,
       sub: 'Active technical teams deployed',
       icon: <FiClock />,
-      color: 'bg-amber-50 text-amber-700 border-amber-200',
+      color: 'bg-slate-100 text-[#0b1d3a] border-slate-200',
       badge: 'High Priority'
     },
     {
@@ -52,7 +52,7 @@ export default function AdminDashboard() {
       value: blogs.length,
       sub: `${categories.length} content categories`,
       icon: <FiEdit3 />,
-      color: 'bg-purple-50 text-purple-700 border-purple-200',
+      color: 'bg-blue-50 text-[#1e3a8a] border-blue-200',
       badge: 'Knowledge Hub'
     },
     {
@@ -60,7 +60,7 @@ export default function AdminDashboard() {
       value: uptimeVal,
       sub: 'Zero statutory non-compliance',
       icon: <FiShield />,
-      color: 'bg-emerald-50 text-emerald-700 border-emerald-200',
+      color: 'bg-slate-50 text-slate-800 border-slate-200',
       badge: uptimeBadge
     }
   ];
@@ -76,10 +76,10 @@ export default function AdminDashboard() {
               <span className="px-2.5 py-0.5 rounded-full text-[10px] font-black uppercase tracking-wider bg-red-50 text-[#c1121f] border border-red-200">
                 Spartans Executive Command
               </span>
-              <span className="text-xs text-slate-400 font-semibold">• June 2026</span>
+              <span className="text-xs text-slate-400 font-semibold">• Active Operations</span>
             </div>
             <h1 className="text-2xl sm:text-3xl font-black text-slate-900 font-heading">
-              Welcome back, {adminUser?.name || 'Pranjal Gupta'}
+              Welcome back, {adminUser?.name && !adminUser.name.toLowerCase().includes('pranjal') ? adminUser.name : 'Administrator'}
             </h1>
             <p className="text-xs sm:text-sm text-slate-600 max-w-2xl">
               Centralized oversight of commercial facility audits, hard engineering SLA tickets, blog content publication, and homepage assets.

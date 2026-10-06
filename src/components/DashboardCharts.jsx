@@ -51,14 +51,14 @@ export default function DashboardCharts({ enquiries = [], homepageContent = null
   // Dynamically compute Industry Distribution from enquiries facilityType
   const sectorColorMap = {
     'Hospitality / 5-Star Hotel': 'bg-[#c1121f]',
-    'Commercial Shopping Mall': 'bg-amber-500',
+    'Commercial Shopping Mall': 'bg-[#1e3a8a]',
     'Corporate Tech Park': 'bg-[#0b1d3a]',
-    'Healthcare & Hospitals': 'bg-emerald-600',
-    'Industrial & Manufacturing Plant': 'bg-indigo-600',
-    'Luxury Residential Estate': 'bg-rose-500'
+    'Healthcare & Hospitals': 'bg-[#334155]',
+    'Industrial & Manufacturing Plant': 'bg-[#475569]',
+    'Luxury Residential Estate': 'bg-[#e63946]'
   };
 
-  const defaultColors = ['bg-[#c1121f]', 'bg-[#0b1d3a]', 'bg-amber-500', 'bg-emerald-600', 'bg-purple-600', 'bg-sky-600'];
+  const defaultColors = ['bg-[#c1121f]', 'bg-[#0b1d3a]', 'bg-[#1e3a8a]', 'bg-[#334155]', 'bg-[#475569]', 'bg-[#e63946]'];
 
   const typeCounts = {};
   enquiries.forEach(enq => {
@@ -77,8 +77,8 @@ export default function DashboardCharts({ enquiries = [], homepageContent = null
   })) : [
     { name: 'Hospitality & Luxury Hotels', percent: 40, count: '0 sites', color: 'bg-[#c1121f]' },
     { name: 'Commercial IT Parks & BPOs', percent: 30, count: '0 sites', color: 'bg-[#0b1d3a]' },
-    { name: 'Shopping Malls & Retail', percent: 20, count: '0 sites', color: 'bg-amber-500' },
-    { name: 'Healthcare & Hospitals', percent: 10, count: '0 sites', color: 'bg-emerald-600' }
+    { name: 'Shopping Malls & Retail', percent: 20, count: '0 sites', color: 'bg-[#1e3a8a]' },
+    { name: 'Healthcare & Hospitals', percent: 10, count: '0 sites', color: 'bg-[#334155]' }
   ];
 
   const targetUptime = homepageContent?.uptimeGuarantee || '99.8%';

@@ -62,10 +62,10 @@ const INITIAL_ENQUIRIES = [
     city: 'Lucknow',
     facilityType: 'Hospitality / 5-Star Hotel',
     sqFootage: '150,000 - 500,000 sq ft',
-    servicesNeeded: ['HVAC & Chiller Plants', 'Vigyani.ai IoT Predictive Hub'],
+    servicesNeeded: ['HVAC & Chiller Plants', 'AI-Powered Tracking & Monitoring'],
     status: 'Pending',
     date: '2026-06-21',
-    notes: 'Requesting pilot deployment of Vigyani.ai IoT vibration sensors on main chiller pumps.'
+    notes: 'Requesting pilot deployment of AI vibration sensors on main chiller pumps.'
   },
   {
     id: 'ENQ-1004',
@@ -100,9 +100,9 @@ const INITIAL_BANNERS = [
     id: 'ban-2',
     title: 'Redefining Excellence in Integrated FM',
     subtitle: 'A single accountable partner for premium technical and soft services, powered by AI.',
-    tagline: 'SFM | SMS | VIGYANI.AI',
+    tagline: 'SFM | SMS | AI TELEMETRY',
     active: true,
-    ctaText: 'Explore Vigyani.ai Hub',
+    ctaText: 'Explore AI Tracking & Monitoring',
     ctaLink: '/ifm-services'
   }
 ];
@@ -111,7 +111,7 @@ const INITIAL_HOMEPAGE = {
   heroTagline: 'Spartans Facility Management • June 2026 Corporate Profile',
   heroHeading: 'Strategic Repairs & Maintenance Partner',
   heroSubheading: 'Pan-India B2B Hard Services & Engineering Excellence',
-  heroDescription: 'Transforming infrastructure upkeep into seamless operational uptime. A single accountable partner for premium technical, engineering, and soft services — powered by Vigyani.ai.',
+  heroDescription: 'Transforming infrastructure upkeep into seamless operational uptime. A single accountable partner for premium technical, engineering, and soft services — powered by AI-Driven Tracking & Monitoring.',
   milestone1: '100% ITI / Diploma Verified Manpower',
   milestone2: 'Lead Technical Partner: Taj Palace Lucknow',
   milestone3: 'Central Command Hub: Lucknow',
@@ -126,7 +126,7 @@ const INITIAL_SOCIALS = {
   whatsapp: '+91-8299726346',
   email: 'Sales@spartansfacility.com',
   address: 'Headquarters & Command Hub: Lucknow, Uttar Pradesh (Pan-India Presence)',
-  contactPerson: 'Pranjal Gupta',
+  contactPerson: 'Sales Team',
   website: 'https://digicoders.in',
   linkedin: 'https://linkedin.com',
   facebook: 'https://facebook.com',

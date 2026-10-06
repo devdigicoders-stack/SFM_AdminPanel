@@ -57,7 +57,7 @@ export default function ManageServices() {
     },
     {
       id: 'ifm-3',
-      title: 'Vigyani.ai Smart IoT Energy Telemetry',
+      title: 'AI-Powered Smart IoT Energy Telemetry',
       tag: 'AI-Powered Anomaly Detection',
       summary: 'Continuous acoustic, thermal, and current harmonic monitoring directly on critical plant machinery.',
       scope: 'IoT vibration sensors, cloud dashboard, automated work orders'
