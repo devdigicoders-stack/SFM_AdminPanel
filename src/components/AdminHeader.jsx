@@ -2,6 +2,7 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import { useAdminAuth } from '../context/AdminAuthContext';
 import { FiMenu, FiBell, FiShield, FiUser } from 'react-icons/fi';
+import SfmLogo from './SfmLogo';
 
 export default function AdminHeader({ onMenuToggle }) {
   const { adminUser } = useAdminAuth();
@@ -17,6 +18,11 @@ export default function AdminHeader({ onMenuToggle }) {
         >
           <FiMenu className="w-5 h-5" />
         </button>
+
+        {/* Brand logo for mobile view when sidebar is collapsed */}
+        <div className="lg:hidden">
+          <SfmLogo size="xs" />
+        </div>
 
         <div className="flex items-center gap-2">
           <span className="hidden sm:inline-flex items-center gap-1.5 px-2.5 py-1 rounded-full text-[11px] font-black uppercase tracking-wider bg-red-50 text-[#c1121f] border border-red-200">
